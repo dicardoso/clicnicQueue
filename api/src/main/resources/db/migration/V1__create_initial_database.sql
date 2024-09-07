@@ -2,6 +2,7 @@
 CREATE TABLE service_types (
     id BIGSERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
+    code VARCHAR(10) NOT NULL UNIQUE,
     priority INT NOT NULL,
     is_active BOOLEAN NOT NULL
 );
@@ -61,11 +62,11 @@ CREATE TABLE ticket_events (
 
 -- SEEDS
 -- Inserindo tipos de atendimento
-INSERT INTO service_types (name, priority, is_active)
+INSERT INTO service_types (name, code, priority, is_active)
 VALUES
-    ('Atendimento Normal', 1, TRUE),
-    ('Atendimento Prioritário', 2, TRUE),
-    ('Atendimento Emergencial', 3, TRUE);
+    ('Normal', 'N', 1, TRUE),
+    ('Prioritário', 'P', 2, TRUE),
+    ('Emergencial', 'E', 3, TRUE);
 
 -- Inserindo guichês
 INSERT INTO counters (name, location, is_active)
