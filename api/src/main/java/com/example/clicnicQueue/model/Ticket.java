@@ -1,5 +1,6 @@
 package com.example.clicnicQueue.model;
 
+import com.example.clicnicQueue.dto.ticket.TicketRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,7 +18,7 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int number;
+    private String number;
 
     @ManyToOne
     @JoinColumn(name = "service_type_id")

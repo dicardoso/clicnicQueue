@@ -32,7 +32,7 @@ CREATE TABLE statuses (
 -- Criação da tabela de senhas
 CREATE TABLE tickets (
     id BIGSERIAL PRIMARY KEY,
-    number INT NOT NULL,
+    number VARCHAR(10) NOT NULL,
     service_type_id BIGINT NOT NULL REFERENCES service_types(id),
     issued_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     called_at TIMESTAMP,
