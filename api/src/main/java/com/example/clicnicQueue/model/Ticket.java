@@ -1,6 +1,5 @@
 package com.example.clicnicQueue.model;
 
-import com.example.clicnicQueue.dto.ticket.TicketRequestDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
