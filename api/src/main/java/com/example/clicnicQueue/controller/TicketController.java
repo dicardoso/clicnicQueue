@@ -39,4 +39,10 @@ public class TicketController {
         TicketResponseDTO ticket = ticketService.generateTicket(data.getServiceTypeId());
         return ResponseEntity.ok(ticket);
     }
+
+    @PostMapping("/next")
+    public ResponseEntity<TicketResponseDTO> callNextTicket(@RequestParam("counter_id") Long counterId) {
+        TicketResponseDTO nextTicket = ticketService.callNextTicket(counterId);
+        return ResponseEntity.ok(nextTicket);
+    }
 }
